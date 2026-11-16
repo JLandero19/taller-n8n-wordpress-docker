@@ -31,6 +31,7 @@ docker-compose down
 Necesitamos que se pueda acceder a `Contraseña de aplicación` dentro de WordPress para conectar n8n con WordPress.
 Es necesario habilitar el modo depuración de WordPress porque no tenemos activo el HTTPS. 
 Para ello en `WORDPRESS_CONFIG_EXTRA` y agregamos `define( 'WP_ENVIRONMENT_TYPE', 'local' );`.
+(Los datos son de ejemplo, no olvidar editarlo)
 ```yaml
 services:
   wordpress:

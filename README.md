@@ -1,2 +1,24 @@
-# taller-n8n-wordpress-docker
-Taller de n8n + WordPress utilizando Docker
+# Taller de n8n + WordPress utilizando Docker
+En este repositorio encontrarás un ejemplo de cómo integrar n8n con WordPress utilizando Docker. n8n es una herramienta de automatización de flujos de trabajo que permite conectar diferentes aplicaciones y servicios, mientras que WordPress es un sistema de gestión de contenido ampliamente utilizado.
+
+## Requisitos previos
+Antes de comenzar, asegúrate de tener instalado lo siguiente en tu máquina:
+- Docker Desktop: [Instalación de Docker](https://www.docker.com/products/docker-desktop/)
+- VS Code: [Instalación de VS Code](https://code.visualstudio.com/download)
+- Necesitarás un terminal para activar los contenedores de Docker `PowerShell` o `CMD` en Windows, o `Terminal` en macOS/Linux.
+- Clonar el proyecto desde GitHub utilizando el siguiente comando:
+```bash
+git clone https://github.com/taller-n8n-wordpress-docker.git
+```
+
+## Comandos para levantar los contenedores
+Para levantar los contenedores de n8n y WordPress:
+```bash
+cd taller-n8n-wordpress-docker
+docker-compose up -d
+```
+
+Para detener los contenedores:
+```bash
+docker-compose down
+```

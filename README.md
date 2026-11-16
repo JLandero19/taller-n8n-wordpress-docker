@@ -26,3 +26,26 @@ docker-compose down
 ## Acceder a n8n y WordPress
 - n8n estará disponible en [http://localhost:5678](http://localhost:5678)
 - WordPress estará disponible en [http://localhost:8080](http://localhost:8080)
+
+## Configuración de WordPress en el fichero `docker-compose.yml`
+Necesitamos que se pueda acceder a `Contraseña de aplicación` dentro de WordPress para conectar n8n con WordPress.
+Es necesario habilitar el modo depuración de WordPress porque no tenemos activo el HTTPS. 
+Para ello en `WORDPRESS_CONFIG_EXTRA` y agregamos `define( 'WP_ENVIRONMENT_TYPE', 'local' );`.
+```yaml
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: wppass123
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'WP_DEBUG_LOG', true );
+        define( 'WP_DEBUG_DISPLAY', false );
+        @ini_set( 'display_errors', 0 );
+        define( 'SCRIPT_DEBUG', true );
+        define( 'WP_ENVIRONMENT_TYPE', 'local' );
+```

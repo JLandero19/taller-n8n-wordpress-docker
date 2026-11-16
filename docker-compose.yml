@@ -13,7 +13,7 @@ services:
         define( 'WP_DEBUG_DISPLAY', false );
         @ini_set( 'display_errors', 0 );
         define( 'SCRIPT_DEBUG', true );
-        define( 'WP_ENVIRONMENT_TYPE', 'development' );
+        define( 'WP_ENVIRONMENT_TYPE', 'local' );
     volumes:
       - wordpress-data:/var/www/html
     depends_on:
